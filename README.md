@@ -11,6 +11,7 @@
 | Maíra Gomes Rodrigues| @username | 3A |
 | Letícia da Silva Lima | @leticialimas | 3B |
 | Sophia Abarno Lemos | @sophiaabarno-hash | 3B |
+| Letícia Krixi de Souza | @leticiakrixis | 3B |
 
 **Tema:** (escreva aqui em 1 frase)
 **Tecnologia:** Python + Flask + SQLite
