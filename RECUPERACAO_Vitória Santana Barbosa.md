@@ -1,0 +1,5 @@
+Uma Issue nada mais é que uma unidade de trabalho geralmente usada para rastrear tarefas, melhorias, bugs ou dúvidas dentro de um projeto de software
+Um Pull Request é nada além da solicitação oficial para revisar, discutir e integrar alterações de código ao projeto principal.
+A separação de camadas faz com que o app.py controlar as rotas/interface e o repositorio.py focar no banco de dados, organizando o código para poder facilitar a manutenção.
+Eu deixei de fazer a atividade 1 por que primeiramente pensei vou fazer depois só que n sabia fazer depois e fiquei com vergonha de pedir ajuda para o professor quando eu entendi como fazia os computadores não estavam funcionando e não tinha computador em casa tentei fazer pelo cll mais o celular estava dando bug fazendo com que não conseguisse terminar a atividade pois sempre que apertava um botão para ver como é que era e se estava fazendo certo voltava tudo do início e isso fez com que eu desistisse de fazê-la
+vou pedir mais ajuda para o professor sem ter vergonha, não irei deixar para depois, irei fazer mais atividades pelo computador e não pelo celular 
