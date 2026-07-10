@@ -5,60 +5,92 @@
    
 ## 👥 Integrantes        
 
+# TCC 2026 - [Nome do Grupo]
+**LTP3 + QP3 · CEMIC 2026 · Prof. Rafael**
+
+---
+
+## 📝 Descrição do Projeto
+
+Nosso projeto consiste no desenvolvimento de um site dedicado à adoção de cães e gatos que necessitam de abrigo e proteção. Diante da falta de plataformas centralizadas e acessíveis para o resgate de animais de rua ou abandonados, criamos este sistema para facilitar o processo de acolhimento. O site atua em duas frentes principais: permite que protetores cadastrem animais que precisam de um lar (informando dados como foto, porte e idade) e possibilita que novos tutores naveguem pela plataforma, filtrem as buscas e iniciem o processo de adoção com segurança.
+
+---
+
+## 👥 Integrantes
+
 | Nome completo | GitHub | Turma |
-|--------------|--------|-------|
-| Vitória Santana Barbosa| @username | 3A |
-| Maíra Gomes Rodrigues| @username | 3A |
-| Letícia da Silva Lima | @leticialimas | 3B |
-| Sophia Abarno Lemos | @sophiaabarno-hash | 3B |
-| Letícia Krixi de Souza | @leticiakrixis | 3B |
-
-**Tema:** (escreva aqui em 1 frase)
-**Tecnologia:** Python + Flask + SQLite
-     
----
-
-## 🎯 O que o sistema faz
-
-(Descreva em 2-3 frases o problema que o sistema resolve e para quem)
+| :--- | :--- | :--- |
+| Vitória Santana | @usuario_vitoria | [3b] |
+| Sofia Abarno | @usuario_sofia | [3b] |
+| Maíra Gomes | @usuario_maira | [3b] |
+| Letícia Krixi | @leticiakrixis | [3b] |
+| Letícia Silva | @usuario_leticia_s | [3b] |
 
 ---
 
-## 🔄 Como o grupo trabalha toda semana
+## 🏗️ Diagrama de Arquitetura do Sistema
 
-1. **Segunda** — cada integrante abre Issues da semana (use o template "Tarefa Semanal")
-2. **Durante a semana** — trabalham e fazem commits
-3. **Sexta** — o grupo abre 1 Pull Request linkando as Issues concluídas
-4. **Push** — métricas de participação aparecem automaticamente no Actions
+```mermaid
+graph TD
+    %% Estilo Geral
+    classDef usuario fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef sistema fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    classDef banco fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
 
----
+    %% Nós Principais
+    Visitante[🌐 Visitante / Usuário]:::usuario
+    
+    subgraph Plataforma_Web [Site de Adoção]
+        Home[📄 Tela Inicial / Home]:::sistema
+        Login[🔐 Tela de Login / Cadastro]:::sistema
+        PainelProtetor[🐾 Painel do Protetor<br>Cadastrar Animal]:::sistema
+        PainelAdotante[❤️ Painel do Adotante<br>Buscar e Adotar]:::sistema
+    end
 
-## 📁 Estrutura do projeto
+    subgraph Servidor_e_Dados [Back-End & Banco de Dados]
+        BD[(💾 Banco de Dados)]:::banco
+    end
 
+    %% Fluxo de Navegação
+    Visitante -->|Acessa o site| Home
+    Home -->|Quer cadastrar ou adotar| Login
+    
+    Login -->|Perfil: Protetor / ONG| PainelProtetor
+    Login -->|Perfil: Adotante| PainelAdotante
+    
+    %% Ações do Protetor
+    PainelProtetor -->|Insere Foto, Idade e Porte| CadPet[Formulário de Cadastro de Pets]
+    CadPet -->|Salvar Dados| BD
+
+    %% Ações do Adotante
+    BD -->|Lista os Pets Disponíveis| PainelAdotante
+    PainelAdotante -->|Filtra por Cão/Gato| Buscar[Buscar Animais]
+    Buscar -->|Demonstra Interesse| Adotar[Iniciar Processo de Adoção]
 ```
-├── README.md           ← este arquivo
-├── BACKLOG.md          ← resumo fixo do MVP e links
-├── docs/
-│   ├── arquitetura.md  ← diagrama de arquitetura
-│   └── decisoes/       ← registros de decisão técnica (ADR)
-├── diagramas/          ← imagens e diagramas
-├── evidencias/         ← screenshots das demos
-├── src/                ← código do sistema
-└── tests/              ← testes automáticos
-```
 
 ---
 
-## ⚡ Comandos rápidos
+## 🚀 Como Executar o Projeto
 
-```bash
-# Clonar o repositório
-git clone <URL>
+### 1. Requisitos Prévios
+Certifique-se de ter instalado em sua máquina:
+* [Git](https://git-scm.com)
+* [Node.js](https://nodejs.org) (ou a tecnologia utilizada no seu Back-end)
 
-# Rodar o projeto
-pip install -r requirements.txt
-python src/app.py
-
-# Rodar os testes
-pytest tests/ -v
-```
+### 2. Passo a Passo
+1. Clone o repositório do projeto:
+   ```bash
+   git clone https://github.com
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
+   cd tcc-2026-3b-equipe06-adocao-pets
+   ```
+3. Instale as dependências necessárias:
+   ```bash
+   npm install
+   ```
+4. Execute o comando de inicialização para rodar localmente:
+   ```bash
+   npm start
+   ```
